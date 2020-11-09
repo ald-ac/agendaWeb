@@ -26,7 +26,7 @@
         </p>
     </header>
     <main>
-        <h2><%= mensaje%></h2>
+        <div><%= mensaje%></div>
         <form class="insercion" action="<%=request.getContextPath()%>/Insertar" method="POST">
             <label>ID:</label>
             <input type="text" name="id" id="id">

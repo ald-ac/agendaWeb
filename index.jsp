@@ -19,23 +19,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <style>
-    table{
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 25px;
-    }
-
-    td, th {
-        padding: 5px 0;
-        font-size: 13pt;
-        border: 1px solid #000000;
-        text-align: center;
-    }
-
-    th {
-        font-size: 14pt;
-        background-color: #4CB5F5;
-    }
     
 </style>
 <body>
@@ -77,7 +60,7 @@
                     <td><%= C.getNombre()%></td>
                     <td><%= C.getTelefono()%></td>
                     <td><%= C.getCorreo()%></td>
-                    <td><button type="submit">MODIFICAR</button></td>
+                    <td><button type="submit" id="btnModificar">MODIFICAR</button></td>
                 </tr>
                 <% } %>
             </table>

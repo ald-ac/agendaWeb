@@ -53,3 +53,36 @@ main {
     background-color: #B3C100;
     color: #ffffff;
 }
+
+/*Estilo tabla*/
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 25px;
+}
+
+td, th {
+    padding: 5px 0;
+    font-size: 13pt;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+th {
+    font-size: 14pt;
+    background-color: #4CB5F5;
+    color: #ffffff;
+}
+
+#btnModificar {
+    border-style: none;
+    background-color: #B3C100;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+#btnModificar:hover, #btnRegistrar:hover {
+    background-color: #4CB5F5;
+}

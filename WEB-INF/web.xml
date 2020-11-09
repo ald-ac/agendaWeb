@@ -23,5 +23,13 @@ Agenda (Aldair)
     <welcome-file>index</welcome-file>
 </welcome-file-list>
 
+<servlet>
+<servlet-name>Insertar</servlet-name>
+<servlet-class>controlador.Insertar</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Insertar</servlet-name>
+<url-pattern>/Insertar</url-pattern> 
+</servlet-mapping>
 
 </web-app>

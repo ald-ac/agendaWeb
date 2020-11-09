@@ -18,9 +18,6 @@
     <title>Agenda</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-    
-</style>
 <body>
     <header>
         <img src="images/logo.png" alt="logo">
@@ -29,7 +26,8 @@
         </p>
     </header>
     <main>
-        <form class="insercion" action="">
+        <h2><%= mensaje%></h2>
+        <form class="insercion" action="<%=request.getContextPath()%>/Insertar" method="POST">
             <label>ID:</label>
             <input type="text" name="id" id="id">
             <label>Nombre:</label>

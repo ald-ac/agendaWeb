@@ -28,7 +28,7 @@ public class Insertar extends HttpServlet
           mensaje = "INSERCION EXITOSA";
           conexion.close();
         } catch(Exception e) {
-          mensaje = "INSERCION FALLIDA " + query + " /// " + e;
+          mensaje = "INSERCION FALLIDA";
         }
 
         request.setAttribute("MENSAJE", mensaje); //Mensaje de notificacion

@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="Estilo.css">
 </head>
 <body>
     <header>
@@ -26,7 +26,6 @@
         </p>
     </header>
     <main>
-        <div><%= mensaje%></div>
         <form class="insercion" action="<%=request.getContextPath()%>/Insertar" method="POST">
             <label>ID:</label>
             <input type="text" name="id" id="id">
@@ -38,6 +37,7 @@
             <input type="email" name="correo">
             <button type="submit" id="btnRegistrar">REGISTRAR</button>
         </form>
+        <div class="mensaje"><%= mensaje%></div>
         <div>
             <table>
                 <tr>
@@ -65,4 +65,19 @@
         </div>
     </main>
 </body>
+<script>
+    const mensaje = document.querySelector('.mensaje');
+    const buton = document.querySelector('#btnRegistrar');
+
+    document.addEventListener("DOMContentLoaded", agregarMensaje);
+
+    function agregarMensaje() {
+        if(mensaje.textContent != "null"){
+            mensaje.style.display = 'block';
+            setTimeout(function() {
+            mensaje.style.display = 'none';
+            }, 3000);
+        }
+    }
+</script>
 </html>

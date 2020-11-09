@@ -54,7 +54,7 @@ main {
     color: #ffffff;
 }
 
-/*Estilo tabla*/
+/*Estilo tabla contenido*/
 
 table{
     border-collapse: collapse;
@@ -85,4 +85,16 @@ th {
 
 #btnModificar:hover, #btnRegistrar:hover {
     background-color: #4CB5F5;
+}
+
+.mensaje {
+    margin: 15px auto;
+    display: none;
+    padding: 10px 0;
+    font-size: 14pt;
+    font-weight: 600;
+    text-align: center;
+    width: 400px;
+    background-color: #34675C;
+    color: #ffffff;
 }

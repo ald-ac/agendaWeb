@@ -16,8 +16,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<style>
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    td, th {
+        padding: 5px 0;
+        font-size: 13pt;
+        border: 1px solid #000000;
+        text-align: center;
+    }
+
+    th {
+        font-size: 14pt;
+        background-color: #4CB5F5;
+    }
+    
+</style>
 <body>
     <header>
         <img src="images/logo.png" alt="logo">
@@ -37,8 +57,16 @@
             <input type="email" name="correo">
             <button type="submit" id="btnRegistrar">REGISTRAR</button>
         </form>
-        <div class="data">
+        <div>
             <table>
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th></th>
+                </tr>
                 <%
                     while(i.hasNext()) { 
                     C = (Contacto)i.next(); //Extraer todos los objetos(contactos) de la lista

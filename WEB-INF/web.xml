@@ -1,0 +1,27 @@
+<!-- <?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml$
+version="2.4"> -->
+<web-app>
+<display-name>
+Agenda (Aldair)
+</display-name>
+<description>
+Agenda (Aldair)
+</description>
+<!-- Publicamos nuestro servlet aquí -->
+<servlet>
+<servlet-name>Consulta</servlet-name>
+<servlet-class>controlador.Consulta</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Consulta</servlet-name>
+<url-pattern>/index</url-pattern> <!--Direccion para establecer este servlet como index-->
+</servlet-mapping>
+<welcome-file-list> <!--Establecer un servlet como index-->
+    <welcome-file>index</welcome-file>
+</welcome-file-list>
+
+
+</web-app>

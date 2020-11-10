@@ -32,4 +32,13 @@ Agenda (Aldair)
 <url-pattern>/Insertar</url-pattern> 
 </servlet-mapping>
 
+<servlet>
+<servlet-name>Eliminar</servlet-name>
+<servlet-class>controlador.Eliminar</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Eliminar</servlet-name>
+<url-pattern>/Eliminar</url-pattern> 
+</servlet-mapping>
+
 </web-app>

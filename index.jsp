@@ -39,41 +39,51 @@
         </form>
         <div class="mensaje"><%= mensaje%></div>
         <div>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th>Correo</th>
-                    <th></th>
-                </tr>
-                <%
-                    while(i.hasNext()) { 
-                    C = (Contacto)i.next(); //Extraer todos los objetos(contactos) de la lista
-                %>
-                <tr>
-                    <td><input type="checkbox" name="eliminar"></td>
-                    <td><%= C.getId()%></td>
-                    <td><%= C.getNombre()%></td>
-                    <td><%= C.getTelefono()%></td>
-                    <td><%= C.getCorreo()%></td>
-                    <td><button type="submit" id="btnModificar">MODIFICAR</button></td>
-                </tr>
-                <% } %>
-            </table>
+            <form action="<%=request.getContextPath()%>/Eliminar" method="POST">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
+                        <th></th>
+                    </tr>
+                    <%
+                        while(i.hasNext()) { 
+                        C = (Contacto)i.next(); //Extraer todos los objetos(contactos) de la lista
+                    %>
+                    <tr>
+                        <td><input type="checkbox" name="idCheckbox" value="<%= C.getId()%>"></td> <!--Asignar id en value del chbox-->
+                        <td><%= C.getId()%></td>
+                        <td><%= C.getNombre()%></td>
+                        <td><%= C.getTelefono()%></td>
+                        <td><%= C.getCorreo()%></td>
+                        <td>
+                            <!--Generar enlace de formulario de modificacion de acuerdo a los valores de cada objeto(registro)-->
+                            <a href="modificar.jsp?id=<%= C.getId() %>&nombre=<%= C.getNombre().replace(" ","+")%> 
+                                &telefono=<%= C.getTelefono().replace(" ","+")%>&correo=<%= C.getCorreo().replace(" ","+")%>">
+                            <p id="btnModificar">MODIFICAR</p>
+                            </a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+                <button type="submit" id="btnEliminar">ELIMINAR</button>
+                </a>
+            </form>
         </div>
     </main>
 </body>
-<script>
-    const mensaje = document.querySelector('.mensaje');
+<script> 
+    const mensaje = document.querySelector('.mensaje'); 
     const buton = document.querySelector('#btnRegistrar');
-
+    //Cuando se carga index, revisar si existe alguna modificacion por parte de un controlador
     document.addEventListener("DOMContentLoaded", agregarMensaje);
 
     function agregarMensaje() {
         if(mensaje.textContent != "null"){
-            mensaje.style.display = 'block';
+            mensaje.style.display = 'block'; //Mostrar mensaje solo 3 segundos
             setTimeout(function() {
             mensaje.style.display = 'none';
             }, 3000);

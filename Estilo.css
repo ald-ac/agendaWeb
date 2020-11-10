@@ -59,7 +59,7 @@ main {
 table{
     border-collapse: collapse;
     width: 100%;
-    margin-top: 25px;
+    margin: 25px 0;
 }
 
 td, th {
@@ -75,7 +75,11 @@ th {
     color: #ffffff;
 }
 
-#btnModificar {
+a {
+    text-decoration: none;
+}
+
+#btnModificar, #btnEliminar {
     border-style: none;
     background-color: #B3C100;
     color: #ffffff;
@@ -85,6 +89,10 @@ th {
 
 #btnModificar:hover, #btnRegistrar:hover {
     background-color: #4CB5F5;
+}
+
+#btnEliminar:hover {
+    background-color: #c22222;
 }
 
 .mensaje {

@@ -3,6 +3,7 @@
     String id = (String)request.getParameter("id");
     id.replace('+', ' ');
     String nombre = (String)request.getParameter("nombre");
+    nombre.replace('+', ' ');
     String telefono = (String)request.getParameter("telefono");
     String correo = (String)request.getParameter("correo");
 %>
@@ -21,8 +22,8 @@
             Agenda de Contactos
         </p>
     </header>
-    <main class="container">
-        <form action="<%=request.getContextPath()%>/Modificar" method="POST"></form>
+    <form action="<%=request.getContextPath()%>/Modificar" method="POST">
+        <main class="container">
             <p class="tituloModificar">Modificar Contacto</p>
                 <table class="formModificar">
                     <tr>
@@ -43,7 +44,7 @@
                     </tr>
                 </table>
             <button type="submit" id="btnMod">MODIFICAR</button>
-        </form>        
-    </main>
+        </main>
+    </form>
 </body>
 </html>

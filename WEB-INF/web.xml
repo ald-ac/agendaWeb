@@ -41,4 +41,13 @@ Agenda (Aldair)
 <url-pattern>/Eliminar</url-pattern> 
 </servlet-mapping>
 
+<servlet>
+<servlet-name>Modificar</servlet-name>
+<servlet-class>controlador.Modificar</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Modificar</servlet-name>
+<url-pattern>/Modificar</url-pattern> 
+</servlet-mapping>
+
 </web-app>

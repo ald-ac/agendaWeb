@@ -34,7 +34,7 @@ main {
     justify-content: center;
 }
 
-.insercion input {
+.insercion > input {
     margin: 0 7px;
     width: 230px;
     font-size: 12pt;
@@ -44,7 +44,7 @@ main {
     width: 50px;
 }
 
-#btnRegistrar {
+#btnRegistrar, #btnMod {
     font-size: 14pt;
     font-weight: 500;
     width: 150px;
@@ -65,9 +65,10 @@ table{
 td, th {
     padding: 5px 0;
     font-size: 13pt;
-    border: 1px solid #000000;
     text-align: center;
 }
+
+.tablaDatos tr:nth-child(even){background-color: #f2f2f2;}
 
 th {
     font-size: 14pt;
@@ -87,7 +88,7 @@ a {
     padding: 5px 10px;
 }
 
-#btnModificar:hover, #btnRegistrar:hover {
+#btnModificar:hover, #btnRegistrar:hover, #btnMod:hover {
     background-color: #4CB5F5;
 }
 
@@ -106,3 +107,26 @@ a {
     background-color: #34675C;
     color: #ffffff;
 }
+
+/*Estilo para pagina modificar.jsp*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloModificar {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.formModificar {
+    width: 50%;
+}
+
+.formModificar input {
+    margin-left: 10px;
+    font-size: 12pt;
+}
+
+

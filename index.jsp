@@ -40,7 +40,7 @@
         <div class="mensaje"><%= mensaje%></div>
         <div>
             <form action="<%=request.getContextPath()%>/Eliminar" method="POST">
-                <table>
+                <table class="tablaDatos">
                     <tr>
                         <th></th>
                         <th>ID</th>
@@ -61,8 +61,7 @@
                         <td><%= C.getCorreo()%></td>
                         <td>
                             <!--Generar enlace de formulario de modificacion de acuerdo a los valores de cada objeto(registro)-->
-                            <a href="modificar.jsp?id=<%= C.getId() %>&nombre=<%= C.getNombre().replace(" ","+")%> 
-                                &telefono=<%= C.getTelefono().replace(" ","+")%>&correo=<%= C.getCorreo().replace(" ","+")%>">
+                            <a href="modificar.jsp?id=<%= C.getId() %>&nombre=<%= C.getNombre().replace(" ","+")%>&telefono=<%= C.getTelefono().replace(" ","+")%>&correo=<%= C.getCorreo().replace(" ","+")%>">
                             <p id="btnModificar">MODIFICAR</p>
                             </a>
                         </td>
@@ -75,6 +74,7 @@
         </div>
     </main>
 </body>
+
 <script> 
     const mensaje = document.querySelector('.mensaje'); 
     const buton = document.querySelector('#btnRegistrar');

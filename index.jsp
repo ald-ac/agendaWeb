@@ -86,6 +86,7 @@
             mensaje.style.display = 'block'; //Mostrar mensaje solo 3 segundos
             setTimeout(function() {
             mensaje.style.display = 'none';
+            window.location.replace("<%=request.getContextPath()%>/index");
             }, 3000);
         }
     }

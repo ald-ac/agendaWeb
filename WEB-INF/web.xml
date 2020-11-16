@@ -17,11 +17,8 @@ Agenda (Aldair)
 </servlet>
 <servlet-mapping>
 <servlet-name>Consulta</servlet-name>
-<url-pattern>/index</url-pattern> <!--Direccion para establecer este servlet como index-->
+<url-pattern>/Inicio</url-pattern> 
 </servlet-mapping>
-<welcome-file-list> <!--Establecer un servlet como index-->
-    <welcome-file>index</welcome-file>
-</welcome-file-list>
 
 <servlet>
 <servlet-name>Insertar</servlet-name>
@@ -48,6 +45,15 @@ Agenda (Aldair)
 <servlet-mapping>
 <servlet-name>Modificar</servlet-name>
 <url-pattern>/Modificar</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ValidarSesion</servlet-name>
+<servlet-class>controlador.ValidarSesion</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ValidarSesion</servlet-name>
+<url-pattern>/ValidarSesion</url-pattern> 
 </servlet-mapping>
 
 </web-app>

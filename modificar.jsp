@@ -1,6 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<% //Verificar si ya hay sesion del usuario
+        String usuario=(String)session.getAttribute("USUARIO");
+        String id = (String)request.getParameter("id");
+        if (usuario != null && id != null) //Tambien se valida que nos e acceda al modificar.jsp directamente sin parametros
+        {
+%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%
-    String id = (String)request.getParameter("id");
     id.replace('+', ' ');
     String nombre = (String)request.getParameter("nombre");
     nombre.replace('+', ' ');
@@ -21,6 +26,7 @@
         <p class="titulo">
             Agenda de Contactos
         </p>
+        <a class="btnSalir" href="cerrarSesion.jsp">SALIR</a> <!--Llamar JSP para cerrar sesion-->
     </header>
     <form action="<%=request.getContextPath()%>/Modificar" method="POST">
         <main class="container">
@@ -48,3 +54,10 @@
     </form>
 </body>
 </html>
+<% //Redirigir si no hay sesion
+    }
+    else
+    {
+        response.sendRedirect(request.getContextPath()+"/index.jsp");
+    }
+%>

@@ -15,11 +15,19 @@ header {
     font-size: 34pt;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 header img { /*LOGO*/
     width: 70px;
     margin-right: 15px;
+}
+
+.btnSalir {
+    font-size: 14pt; 
+    padding: 10px 20px;
+    background-color:#4f5565;
+    color: #ffffff;
 }
 
 main {

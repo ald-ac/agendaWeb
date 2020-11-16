@@ -37,42 +37,39 @@ main {
 .insercion > input {
     margin: 0 7px;
     width: 230px;
-    font-size: 12pt;
 }
 
-#id {
+#inputId {
     width: 50px;
 }
 
-#btnRegistrar, #btnMod {
-    font-size: 14pt;
-    font-weight: 500;
+#btnRegistrar {
+    font-size: 12pt;
     width: 150px;
     padding: 5px 0;
     border-style: none;
-    background-color: #B3C100;
+    background-color: #5CB85C;
     color: #ffffff;
 }
 
 /*Estilo tabla contenido*/
-
 table{
     border-collapse: collapse;
-    width: 100%;
-    margin: 25px 0;
+    width: 90%;
+    margin: 25px auto;
 }
 
 td, th {
     padding: 5px 0;
-    font-size: 13pt;
+    font-size: 12pt;
     text-align: center;
 }
 
 .tablaDatos tr:nth-child(even){background-color: #f2f2f2;}
 
 th {
-    font-size: 14pt;
-    background-color: #4CB5F5;
+    font-size: 13pt;
+    background-color: #000000;
     color: #ffffff;
 }
 
@@ -80,20 +77,25 @@ a {
     text-decoration: none;
 }
 
-#btnModificar, #btnEliminar {
+#btnModificar, #btnMod, .btnSesion {
     border-style: none;
-    background-color: #B3C100;
+    background-color: #5BC0DE;
     color: #ffffff;
-    font-weight: 600;
+    font-size: 12pt;
     padding: 5px 10px;
 }
 
-#btnModificar:hover, #btnRegistrar:hover, #btnMod:hover {
-    background-color: #4CB5F5;
+#btnEliminar{
+    font-size: 12pt;
+    width: 150px;
+    padding: 5px 0;
+    border-style: none;
+    background-color: #D9534F;
+    color: #ffffff;
 }
 
-#btnEliminar:hover {
-    background-color: #c22222;
+#btnModificar:hover, #btnRegistrar:hover, #btnMod:hover, #btnEliminar:hover , .btnSesion:hover{
+    background-color: #000000
 }
 
 .mensaje {
@@ -101,11 +103,11 @@ a {
     display: none;
     padding: 10px 0;
     font-size: 14pt;
-    font-weight: 600;
     text-align: center;
     width: 400px;
-    background-color: #34675C;
-    color: #ffffff;
+    background-color: #FFFFBA;
+    border: 1px solid #f5f58b;
+    color: #000000;
 }
 
 /*Estilo para pagina modificar.jsp*/
@@ -124,9 +126,29 @@ a {
 .formModificar {
     width: 320px;
 }
-
-.formModificar input {
+/*Para todo input*/
+input[type=text] {
     font-size: 12pt;
+    padding: 2px 2px;
 }
 
+/*----------Pagina inicio (de sesion)----------*/
+.sesionContenedor {
+    width: 100%;
+}
 
+.formSesion {
+    padding: 30px 30px;
+    justify-content: space-around;
+    margin: 70px auto;
+    height: 270px;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.tituloSesion {
+    font-size: 16pt;
+    text-align: center;
+}

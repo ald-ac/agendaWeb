@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link rel="stylesheet" type="text/css" href="Estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
     <header>
@@ -28,17 +28,17 @@
     <main>
         <form class="insercion" action="<%=request.getContextPath()%>/Insertar" method="POST">
             <label>ID:</label>
-            <input type="text" name="id" id="id">
+            <input type="text" name="id" id="inputId">
             <label>Nombre:</label>
             <input type="text" name="nombre">
             <label>Teléfono:</label>
             <input type="tel" name="telefono">
             <label>Email:</label>
             <input type="email" name="correo">
-            <button type="submit" id="btnRegistrar">REGISTRAR</button>
+            <button type="submit" id="btnRegistrar">Registrar</button>
         </form>
         <div class="mensaje"><%= mensaje%></div>
-        <div>
+        <div class="datosContenedor">
             <form action="<%=request.getContextPath()%>/Eliminar" method="POST">
                 <table class="tablaDatos">
                     <tr>
@@ -62,13 +62,13 @@
                         <td>
                             <!--Generar enlace de formulario de modificacion de acuerdo a los valores de cada objeto(registro)-->
                             <a href="modificar.jsp?id=<%= C.getId() %>&nombre=<%= C.getNombre().replace(" ","+")%>&telefono=<%= C.getTelefono().replace(" ","+")%>&correo=<%= C.getCorreo().replace(" ","+")%>">
-                            <p id="btnModificar">MODIFICAR</p>
+                                <p id="btnModificar">Modificar</p>
                             </a>
                         </td>
                     </tr>
                     <% } %>
                 </table>
-                <button type="submit" id="btnEliminar">ELIMINAR</button>
+                <button type="submit" id="btnEliminar">Eliminar</button>
                 </a>
             </form>
         </div>

@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar</title>
-    <link rel="stylesheet" href="Estilo.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
@@ -28,7 +28,7 @@
                 <table class="formModificar">
                     <tr>
                         <td>ID:</td>
-                        <td> <input class="prueba" type="text" name="id" value=<%=id %> readonly=readonly> </td>
+                        <td> <input type="text" name="id" value=<%=id %> readonly=readonly> </td>
                     </tr>
                     <tr>
                         <td>Nombre:</td>

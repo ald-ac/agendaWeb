@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
@@ -30,18 +30,21 @@
         <p class="titulo">
             Agenda de Contactos
         </p>
-        <a class="btnSalir" href="cerrarSesion.jsp">SALIR</a> <!--Llamar JSP para cerrar sesion-->
+        <div>
+            <p class="nombreUsuario"><%= usuario%></p>
+            <a class="btnSalir" href="cerrarSesion.jsp">SALIR</a> <!--Llamar JSP para cerrar sesion-->
+        </div>
     </header>
     <main>
         <form class="insercion" action="<%=request.getContextPath()%>/Insertar" method="POST">
             <label>ID:</label>
-            <input type="text" name="id" id="inputId">
+            <input type="text" name="id" id="inputId" required pattern="[0-9]+" title="Solo números enteros">
             <label>Nombre:</label>
-            <input type="text" name="nombre">
+            <input type="text" name="nombre" required>
             <label>Teléfono:</label>
-            <input type="tel" name="telefono">
+            <input type="tel" name="telefono" required pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" title="10 números enteros">
             <label>Email:</label>
-            <input type="email" name="correo">
+            <input type="email" name="correo" required>
             <button type="submit" id="btnRegistrar">Registrar</button>
         </form>
         <div class="mensaje"><%= mensaje%></div>

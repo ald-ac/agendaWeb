@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
                 <p>Usuario: </p>
                 <input type="text" name="usuario">
                 <p>Contraseña: </p>
-                <input type="text" name="password"><br>
+                <input type="password" name="password"><br>
                 <button class="btnSesion" type="submit">Entrar</button>
             </form>
         </div>

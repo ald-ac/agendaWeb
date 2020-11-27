@@ -23,10 +23,18 @@ header img { /*LOGO*/
     margin-right: 15px;
 }
 
+.nombreUsuario {
+    display: inline;
+    font-size: 14pt;
+    color: #ffffff;
+    background-color: #4f5565;
+    padding: 10px 10px;
+}
+
 .btnSalir {
     font-size: 14pt; 
     padding: 10px 20px;
-    background-color:#4f5565;
+    background-color: #D9534F;
     color: #ffffff;
 }
 

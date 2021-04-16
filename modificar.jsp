@@ -1,7 +1,8 @@
 <% //Verificar si ya hay sesion del usuario
         String usuario=(String)session.getAttribute("USUARIO");
         String id = (String)request.getParameter("id");
-        if (usuario != null && id != null) //Tambien se valida que nos e acceda al modificar.jsp directamente sin parametros
+        int idU = (int)session.getAttribute("ID");
+        if (usuario != null && id != null) //Tambien se valida que no se acceda al modificar.jsp directamente sin parametros
         {
 %>
 <%@ page contentType="text/html; charset=UTF-8"%>
@@ -24,10 +25,10 @@
     <header>
         <img src="images/logo.png" alt="logo">
         <p class="titulo">
-            Agenda de Contactos
+            Agenda de contactos
         </p>
         <div>
-            <p class="nombreUsuario"><%= usuario%></p>
+            <p class="nombreUsuario">ID: <%= idU%> Usuario: <%= usuario%></p>
             <a class="btnSalir" href="cerrarSesion.jsp">SALIR</a> <!--Llamar JSP para cerrar sesion-->
         </div>
     </header>

@@ -1,6 +1,6 @@
 package controlador;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import java.net.*; //Necesarios 
@@ -21,14 +21,16 @@ public class ValidarSesion extends HttpServlet
           try {
               String usuarioL = request.getParameter("usuario");
               String password = request.getParameter("password");
-              String query = "SELECT * FROM usuarios WHERE usuario ='" + usuarioL + "' AND pass = '" + password + "';";
+              String query = "SELECT * FROM usuarios WHERE id = " + usuarioL + " AND pass = '" + password + "';";
               Class.forName("org.postgresql.Driver"); //Clase para conexion a postgres
-            conexion = DriverManager.getConnection(url, "ald", "root"); //Parametros de conexion
+            conexion = DriverManager.getConnection(url, "postgres", "root"); //Parametros de conexion
             Statement inst = conexion.createStatement(); //Operacion a la base de datos
             ResultSet rs = inst.executeQuery(query); //Almacena la respuesta 
             if(rs.next()) { //Si existe un registro con los datos ingresados, existe el usuario
+              int id = rs.getInt(1);
               String usuarioF = rs.getString(2).trim();
               //Crear variables de sesion
+              session.setAttribute("ID", id);
               session.setAttribute("USUARIO", usuarioF);
               response.sendRedirect(request.getContextPath()+"/Inicio");
             } else { //Si no existe el usuario en la BD se redirige a index
@@ -37,6 +39,7 @@ public class ValidarSesion extends HttpServlet
             conexion.close();
             inst.close();
           } catch(Exception e) {
+            response.sendRedirect(request.getContextPath()+"/index.jsp");
           }
         } else { //Si hay sesion iniciada, no tiene caso verificar el usuario, dado que es obvio que existe
           response.sendRedirect(request.getContextPath()+"/Inicio");

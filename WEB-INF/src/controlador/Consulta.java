@@ -1,6 +1,6 @@
 package controlador;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -25,7 +25,7 @@ public class Consulta extends HttpServlet
       try
       {    
         Class.forName("org.postgresql.Driver"); //Cargar el driver para la conexion desde el jar correspondiente
-        con=DriverManager.getConnection(url,"ald","root"); //Se crea  la conexion usando el url y datos del usuario
+        con=DriverManager.getConnection(url,"postgres","root"); //Se crea  la conexion usando el url y datos del usuario
         Statement inst=con.createStatement(); //Crea la sentencia o instruccion sobre la que se ejecutara el query
         ResultSet rs=inst.executeQuery(query); //Se ejecuta el query y se almacena la consulta res
         while (rs.next()) //Este codigo se ejecutara mientras haya un siguiente renglon en el resultado de la consulta

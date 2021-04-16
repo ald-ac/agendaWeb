@@ -1,6 +1,6 @@
 package controlador;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import java.net.*; //Necesarios 
@@ -24,7 +24,7 @@ public class Eliminar extends HttpServlet
           String url = "jdbc:postgresql://127.0.0.1:5432/agenda"; //Establecer base de datos de eliminacion
           try {
             Class.forName("org.postgresql.Driver"); //Clase para conexion a postgres
-            conexion = DriverManager.getConnection(url, "ald", "root"); //Parametros de conexion
+            conexion = DriverManager.getConnection(url, "postgres", "root"); //Parametros de conexion
             Statement inst = conexion.createStatement(); //Operacion a la base de datos
             //Solo se usa en operaciones que modifican la base de datos
             for(int i=0; i < checkbox.length; i++) { //Recorrer arreglo eliminando todos los recibidos de la bd

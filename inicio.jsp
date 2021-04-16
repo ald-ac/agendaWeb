@@ -1,5 +1,6 @@
 <% //Verificar si ya hay sesion del usuario
         String usuario=(String)session.getAttribute("USUARIO");
+        int id = (int)session.getAttribute("ID");
         if (usuario != null)
         {
 %>
@@ -21,17 +22,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda</title>
+    <title>Directorio</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header>
         <img src="images/logo.png" alt="logo">
         <p class="titulo">
-            Agenda de Contactos
+            Agenda de contactos
         </p>
         <div>
-            <p class="nombreUsuario"><%= usuario%></p>
+            <p class="nombreUsuario">ID: <%= id%> Usuario: <%= usuario%></p>
             <a class="btnSalir" href="cerrarSesion.jsp">SALIR</a> <!--Llamar JSP para cerrar sesion-->
         </div>
     </header>

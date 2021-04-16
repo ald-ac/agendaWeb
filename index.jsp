@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Agenda</title>
 </head>
 <body>
     <% //Verificar si ya hay sesion del usuario
@@ -15,7 +15,7 @@
     <header>
         <img src="images/logo.png" alt="lo12go">
         <p class="titulo">
-            Agenda de Contactos
+            Agenda de contactos
         </p>
     </header>
     <main>

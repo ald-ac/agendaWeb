@@ -21,13 +21,13 @@ public class ValidarSesion extends HttpServlet
           try {
               String usuarioL = request.getParameter("usuario");
               String password = request.getParameter("password");
-              String query = "SELECT * FROM usuarios WHERE id = " + usuarioL + " AND pass = '" + password + "';";
+              String query = "SELECT * FROM usuarios WHERE id = '" + usuarioL + "' AND pass = '" + password + "';";
               Class.forName("org.postgresql.Driver"); //Clase para conexion a postgres
             conexion = DriverManager.getConnection(url, "postgres", "root"); //Parametros de conexion
             Statement inst = conexion.createStatement(); //Operacion a la base de datos
             ResultSet rs = inst.executeQuery(query); //Almacena la respuesta 
             if(rs.next()) { //Si existe un registro con los datos ingresados, existe el usuario
-              int id = rs.getInt(1);
+              String id = rs.getString(1).trim();
               String usuarioF = rs.getString(2).trim();
               //Crear variables de sesion
               session.setAttribute("ID", id);

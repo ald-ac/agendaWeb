@@ -13,16 +13,16 @@ public class Insertar extends HttpServlet
         //Verificar si ya hay sesion del usuario, sino, no tiene caso hacer la consulta
         HttpSession session = request.getSession(true);
         String usuario = (String)session.getAttribute("USUARIO");
+        String idU = (String)session.getAttribute("ID");
         if(usuario != null)
         {
           String mensaje = null; //Mensaje de notificacion
-          String id = request.getParameter("id");
           String nombre = request.getParameter("nombre");
           String telefono = request.getParameter("telefono");
           String correo = request.getParameter("correo"); 
 
           //=================CREANDO QUERY DE INSERCION=================
-          String query = "INSERT INTO contactos VALUES(" + id +",'"+ nombre +"','" + telefono +"','" + correo + "')";
+          String query = "INSERT INTO contactos (nombre, telefono, correo, usuarios_id) VALUES('"+ nombre +"','" + telefono +"','" + correo + "','" + idU + "')";
           Connection conexion = null;
           String url = "jdbc:postgresql://127.0.0.1:5432/agenda"; //Establecer base de datos de insercion
           try {

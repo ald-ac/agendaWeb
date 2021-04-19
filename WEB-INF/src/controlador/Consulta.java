@@ -15,12 +15,13 @@ public class Consulta extends HttpServlet
     //Verificar si ya hay sesion del usuario, sino, no tiene caso hacer la consulta
     HttpSession session = request.getSession(true);
     String usuario = (String)session.getAttribute("USUARIO");
+    String idU = (String)session.getAttribute("ID");
     if(usuario != null)
     {
       String mensaje = (String)request.getAttribute("MENSAJE"); //Mensaje que se recibe cuando se realiza alguna accion
       String url="jdbc:postgresql://127.0.0.1:5432/agenda"; //Se indica la localizacion de la BD
       Connection con=null; //Se declara el objeto Connection "con" con un valor nulo
-      String query="SELECT * FROM contactos ORDER BY nombre"; //Declarando query que se va a ejecutar
+      String query="SELECT * FROM contactos WHERE usuarios_id = '" + idU + "' ORDER BY nombre;" ; //Declarando query que se va a ejecutar
       ArrayList L=new ArrayList(); //Se crea una lista para guardar los renglones o registros que se obtienen de la consulta
       try
       {    
